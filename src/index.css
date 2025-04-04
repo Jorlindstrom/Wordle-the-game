@@ -1,0 +1,176 @@
+body {
+  text-align: center;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  }
+  
+  h1 {
+      font-size: 1.2rem;
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+      margin: 0 0 30px 0;
+      color: #333;
+  }
+    
+    .row {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+    }
+  
+    .row > div {
+      display: block;
+      width: 60px;
+      height: 60px;
+      border: 1px solid #bbb;
+      margin: 4px;
+      text-align: center;
+      line-height: 60px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 2.5rem;
+    }
+    
+    .row > div.green {
+      --background: #5AC85A;
+      --border-color: #5AC85A;
+      animation: flip 0.5s ease forwards;
+    }
+  
+    .row > div.grey {
+      --background: #A1A1A1;
+      --border-color: #A1A1A1;
+      animation: flip 0.5s ease forwards;
+    }
+  
+    .row > div.yellow {
+     --background: #E2CC68;
+      --border-color: #E2CC68;
+      animation: flip 0.5s ease forwards;
+    }
+
+    .row > div:nth-child(2){
+      animation-delay: 0.2s;
+    }
+
+    .row > div:nth-child(3){
+      animation-delay: 0.4s;
+    }
+
+    .row > div:nth-child(4){
+      animation-delay: 0.6s;
+    }
+
+    .row > div:nth-child(5){
+      animation-delay: 0.8s;
+    }
+
+    .row.current > div.filled {
+      animation: bounce 0.2s ease-in-out forwards;
+    }
+
+    .keypad {
+      max-width: 500px;
+      margin: 20px auto;
+    }
+
+    .keypad > div {
+      margin: 5px;
+      width: 40px;
+      height: 50px;
+      background:#EEE;
+      display: inline-block;
+      border-radius: 6px;
+      line-height: 50px;
+    }
+
+    .keypad > div.green {
+      background: #5AC85A;
+      color: #FFFFFF;
+      transition: all 0.3s ease-in;
+    }
+
+    .keypad > div.yellow {
+      background: #E2CC68;
+      color: #FFFFFF;
+      transition: all 0.3s ease-in;
+    }
+
+    .keypad > div.grey {
+      background: #A1A1A1;
+      color: #FFFFFF;
+      transition: all 0.3s ease-in;
+    }
+
+    .modal {
+      background: rgba(255, 255, 255, 0.7);
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .modal div {
+      max-width: 480px;
+      background: #FFFFFF;
+      padding: 40px;
+      border-radius: 10px;
+      margin: 10% auto;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal .solution {
+      color: #FF004C;
+      font-weight: bold;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @keyframes flip {
+      0% {
+        transform: rotateX(0);
+        background: #FFFFFF;
+        border-color: #333333;
+      }
+
+      45% {
+        transform: rotateX(90deg);
+        background: #FFFFFF;
+        border-color: #333333;
+      }
+      
+      55% {
+        transform: rotateX(90deg);
+        background: var(--background);
+        border-color: var(--border-color);
+        color: #FFFFFF;
+      }
+
+      100% {
+        transform: rotateX(0);
+        background: var(--background);
+        border-color: var(--border-color);
+        color: #FFFFFF;
+      }
+    }
+
+  @keyframes bounce {
+
+    0% {
+      transform: scale(1);
+      border-color: #DDDDDD;
+    }
+
+    50% {
+      transform: scale(1.2);
+    }
+
+    100% {
+      transform: scale(1);
+      border-color: #333333;
+    }
+  } 
